@@ -10,6 +10,7 @@ type Color int
 
 const (
 	Unknown Color = iota
+	White
 	Red
 	Orange
 	Yellow
@@ -28,11 +29,11 @@ type HSLComponents struct {
 }
 
 func (c Color) String() string {
-	colors := [...]string{"red", "orange", "yellow", "green", "blue", "purple", "pink"}
-	if c < Red || c > Pink {
+	colors := [...]string{"white", "red", "orange", "yellow", "green", "blue", "purple", "pink"}
+	if c < White || c > Pink {
 		return fmt.Sprintf("Color(%d)", int(c))
 	}
-	return colors[c-Red]
+	return colors[c-White]
 }
 
 func main() {
@@ -180,5 +181,38 @@ func MatchColorToRGB(rgb RGBComponents) Color {
 }
 
 func matchColorFromHSL(hsl HSLComponents) Color {
+	l := math.Floor(hsl.Lightness)
+	s := math.Floor(hsl.Saturation)
+	h := math.Floor(hsl.Hue)
+
+	if s <= 10 && l >= 90 {
+		return White
+	} else if l <= 15 {
+		return Unknown // ("Black")
+	} else if (s <= 10 && l <= 70) || s == 0 {
+		return Unknown // ("Gray")
+	} else if (h >= 0 && h <= 15) || h >= 346 {
+		return Red
+	} else if h >= 16 && h <= 35 {
+		if s < 90 {
+			return Unknown // ("Brown")
+		} else {
+			return Orange
+		}
+	} else if h >= 36 && h <= 54 {
+		if s < 90 {
+			return Unknown // ("Brown")
+		} else {
+			return Yellow
+		}
+	} else if h >= 55 && h <= 165 {
+		return Green
+	} else if h >= 166 && h <= 260 {
+		return Blue
+	} else if h >= 261 && h <= 290 {
+		return Purple
+	} else if h >= 291 && h <= 345 {
+		return Pink
+	}
 	return Unknown
 }
