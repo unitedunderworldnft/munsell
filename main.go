@@ -148,38 +148,6 @@ func GetHSLFromRGB(rgb RGBComponents) HSLComponents {
 	}
 }
 
-func MatchColorToRGB(rgb RGBComponents) Color {
-	fmt.Println(rgb)
-	if rgb.Red == 255 && rgb.Green < 75 && rgb.Blue == 0 {
-		return Red
-	} else if rgb.Red == 255 && rgb.Green < 205 && rgb.Blue == 0 {
-		return Orange
-	} else if rgb.Red == 255 && rgb.Green <= 255 && rgb.Blue == 0 {
-		return Yellow
-	} else if rgb.Red > 225 && rgb.Green == 255 && rgb.Blue == 0 {
-		return Yellow
-	} else if rgb.Red <= 225 && rgb.Green == 255 && rgb.Blue == 0 {
-		return Green
-	} else if rgb.Red == 0 && rgb.Green == 255 && rgb.Blue < 165 {
-		return Green
-	} else if rgb.Red == 0 && rgb.Green == 255 && rgb.Blue >= 165 {
-		return Blue
-	} else if rgb.Red == 0 && rgb.Green < 255 && rgb.Blue == 255 {
-		return Blue
-	} else if rgb.Red < 25 && rgb.Green == 0 && rgb.Blue == 255 {
-		return Blue
-	} else if rgb.Red < 125 && rgb.Green == 0 && rgb.Blue == 255 {
-		return Purple
-	} else if rgb.Red >= 125 && rgb.Green == 0 && rgb.Blue == 255 {
-		return Pink
-	} else if rgb.Red == 255 && rgb.Green == 0 && rgb.Blue >= 175 {
-		return Pink
-	} else if rgb.Red == 255 && rgb.Green == 0 && rgb.Blue < 175 {
-		return Red
-	}
-	return Unknown
-}
-
 func matchColorFromHSL(hsl HSLComponents) Color {
 	l := math.Floor(hsl.Lightness)
 	s := math.Floor(hsl.Saturation)
