@@ -36,21 +36,6 @@ func (c Color) String() string {
 	return colors[c-White]
 }
 
-func main() {
-	fmt.Println("along absolute edge")
-	fmt.Println(GetColorFromHex("#ff0000"))
-	fmt.Println(GetColorFromHex("#ff9400"))
-	fmt.Println(GetColorFromHex("#f6ff00"))
-	fmt.Println(GetColorFromHex("#26ff00"))
-	fmt.Println(GetColorFromHex("#003fff"))
-	fmt.Println(GetColorFromHex("#5000ff"))
-	fmt.Println(GetColorFromHex("#ff00f6"))
-
-	fmt.Println("\nrandom points")
-	fmt.Println(GetColorFromHex("#3fd125"))
-
-}
-
 // Returns a color from Color when passed a hex color code, defaults to Unknown
 func GetColorFromHex(hexColor string) (color Color, err error) {
 	if hexColor[0] == '#' {
@@ -61,25 +46,23 @@ func GetColorFromHex(hexColor string) (color Color, err error) {
 		// shorthand
 	case 6:
 		// standard
-		rgb := GetRGBFromHex(hexColor)
-		hsl := GetHSLFromRGB(rgb)
-		color = matchColorFromHSL(hsl)
+		rgb := getRGBFromHex(hexColor)
+		color = GetColorFromRGB(rgb)
 	case 8:
 		// alpha component
-		rgb := GetRGBFromHex(hexColor[0:6])
-		hsl := GetHSLFromRGB(rgb)
-		color = matchColorFromHSL(hsl)
+		rgb := getRGBFromHex(hexColor[0:6])
+		color = GetColorFromRGB(rgb)
 	default:
 		return Unknown, fmt.Errorf("invalid hex color code: %s", hexColor)
 	}
 	return color, nil
 }
 
-func EnsureHexIsValid(hexColor string) bool {
+func ensureHexIsValid(hexColor string) bool {
 	return true
 }
 
-func GetRGBFromHex(hexColor string) RGBComponents {
+func getRGBFromHex(hexColor string) RGBComponents {
 	red, err := strconv.ParseUint(hexColor[0:2], 16, 8)
 	if err != nil {
 		panic(err)
@@ -99,7 +82,13 @@ func GetRGBFromHex(hexColor string) RGBComponents {
 	}
 }
 
-func GetHSLFromRGB(rgb RGBComponents) HSLComponents {
+func GetColorFromRGB(rgb RGBComponents) Color {
+	hsl := getHSLFromRGB(rgb)
+	color := matchColorFromHSL(hsl)
+	return color
+}
+
+func getHSLFromRGB(rgb RGBComponents) HSLComponents {
 	// taken from https://stackoverflow.com/a/39147465
 	r := float64(rgb.Red)
 	g := float64(rgb.Green)
@@ -146,6 +135,11 @@ func GetHSLFromRGB(rgb RGBComponents) HSLComponents {
 		Saturation: c * 100,
 		Lightness:  (max + min) * 50,
 	}
+}
+
+func GetColorFromHSL(hsl HSLComponents) Color {
+	color := matchColorFromHSL(hsl)
+	return color
 }
 
 func matchColorFromHSL(hsl HSLComponents) Color {
