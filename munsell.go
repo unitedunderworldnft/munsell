@@ -1,4 +1,4 @@
-package main
+package munsell
 
 import (
 	"fmt"
