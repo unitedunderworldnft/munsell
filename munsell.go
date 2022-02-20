@@ -29,7 +29,7 @@ type HSLComponents struct {
 }
 
 func (c Color) String() string {
-	colors := [...]string{"white", "red", "orange", "yellow", "green", "blue", "purple", "pink"}
+	colors := [...]string{"White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"}
 	if c < White || c > Pink {
 		return fmt.Sprintf("Color(%d)", int(c))
 	}
