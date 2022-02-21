@@ -16,6 +16,16 @@ func TestMatchFromHexWhite(t *testing.T) {
 	}
 }
 
+func TestMatchFromHexBlack(t *testing.T) {
+	color, err := munsell.GetColorFromHex("#0c1921")
+	if err != nil {
+		t.Errorf("Expected color, received %v", err)
+	}
+	if color != munsell.Black {
+		t.Errorf("Expected Black, received %v", color)
+	}
+}
+
 func TestMatchFromHexRed(t *testing.T) {
 	color, err := munsell.GetColorFromHex("#d33d32")
 	if err != nil {
@@ -56,8 +66,18 @@ func TestMatchFromHexGreen(t *testing.T) {
 	}
 }
 
-func TestMatchFromHexBlue(t *testing.T) {
+func TestMatchFromHexLightBlue(t *testing.T) {
 	color, err := munsell.GetColorFromHex("#4fa1c6")
+	if err != nil {
+		t.Errorf("Expected color, received %v", err)
+	}
+	if color != munsell.LightBlue {
+		t.Errorf("Expected LightBlue, received %v", color)
+	}
+}
+
+func TestMatchFromHexBlue(t *testing.T) {
+	color, err := munsell.GetColorFromHex("#2a57c1")
 	if err != nil {
 		t.Errorf("Expected color, received %v", err)
 	}
@@ -73,15 +93,5 @@ func TestMatchFromHexPurple(t *testing.T) {
 	}
 	if color != munsell.Purple {
 		t.Errorf("Expected Purple, received %v", color)
-	}
-}
-
-func TestMatchFromHexPink(t *testing.T) {
-	color, err := munsell.GetColorFromHex("#d84eac")
-	if err != nil {
-		t.Errorf("Expected color, received %v", err)
-	}
-	if color != munsell.Pink {
-		t.Errorf("Expected Pink, received %v", color)
 	}
 }
