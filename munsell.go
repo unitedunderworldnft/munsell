@@ -11,13 +11,14 @@ type Color int
 const (
 	Unknown Color = iota
 	White
+	Black
 	Red
 	Orange
 	Yellow
 	Green
+	LightBlue
 	Blue
 	Purple
-	Pink
 )
 
 type RGBComponents struct {
@@ -29,11 +30,11 @@ type HSLComponents struct {
 }
 
 func (c Color) String() string {
-	colors := [...]string{"White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"}
-	if c < White || c > Pink {
+	colors := [...]string{"Unknown", "White", "Black", "Red", "Orange", "Yellow", "Green", "Light Blue", "Blue", "Purple"}
+	if c < Unknown || c > Purple {
 		return fmt.Sprintf("Color(%d)", int(c))
 	}
-	return colors[c-White]
+	return colors[c]
 }
 
 // Returns a color from Color when passed a hex color code, defaults to Unknown
@@ -150,7 +151,7 @@ func matchColorFromHSL(hsl HSLComponents) Color {
 	if s <= 10 && l >= 90 {
 		return White
 	} else if l <= 15 {
-		return Unknown // ("Black")
+		return Black
 	} else if (s <= 10 && l <= 70) || s == 0 {
 		return Unknown // ("Gray")
 	} else if (h >= 0 && h <= 15) || h >= 346 {
@@ -169,12 +170,14 @@ func matchColorFromHSL(hsl HSLComponents) Color {
 		}
 	} else if h >= 60 && h <= 165 {
 		return Green
-	} else if h >= 166 && h <= 260 {
+	} else if h >= 166 && h <= 199 {
+		return LightBlue
+	} else if h >= 200 && h <= 260 {
 		return Blue
 	} else if h >= 261 && h <= 290 {
 		return Purple
 	} else if h >= 291 && h <= 345 {
-		return Pink
+		return Purple // Pink
 	}
 	return Unknown
 }
