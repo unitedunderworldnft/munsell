@@ -45,6 +45,8 @@ func GetColorFromHex(hexColor string) (color Color, err error) {
 	switch len(hexColor) {
 	case 3:
 		// shorthand
+		rgb := getRGBFromHex(hexColor[0:1] + hexColor[0:1] + hexColor[1:2] + hexColor[1:2] + hexColor[2:3] + hexColor[2:3])
+		color = GetColorFromRGB(rgb)
 	case 6:
 		// standard
 		rgb := getRGBFromHex(hexColor)
