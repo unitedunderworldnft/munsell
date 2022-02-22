@@ -95,3 +95,13 @@ func TestMatchFromHexPurple(t *testing.T) {
 		t.Errorf("Expected Purple, received %v", color)
 	}
 }
+
+func TestMatchFromHexShorthand(t *testing.T) {
+	color, err := munsell.GetColorFromHex("#f00")
+	if err != nil {
+		t.Errorf("Expected color, received %v", err)
+	}
+	if color != munsell.Red {
+		t.Errorf("Expected Red, received %v", color)
+	}
+}
