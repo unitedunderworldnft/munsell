@@ -124,7 +124,7 @@ func TestPremierLeague_ArsenalAlt(t *testing.T) {
 }
 
 func TestPremierLeague_Aston(t *testing.T) {
-	testPremierLeague(t, "#7A003C", munsell.Purple) // FIXME:
+	testPremierLeague(t, "#7A003C", munsell.Purple)
 }
 
 func TestPremierLeague_AstonAlt(t *testing.T) {
@@ -148,7 +148,7 @@ func TestPremierLeague_BrightonAlt(t *testing.T) {
 }
 
 func TestPremierLeague_Burnley(t *testing.T) {
-	testPremierLeague(t, "#53162F", munsell.Purple) // FIXME:
+	testPremierLeague(t, "#53162F", munsell.Purple)
 }
 
 func TestPremierLeague_BurnleyAlt(t *testing.T) {
@@ -260,7 +260,7 @@ func TestPremierLeague_WatfordAlt(t *testing.T) {
 }
 
 func TestPremierLeague_WestHam(t *testing.T) {
-	testPremierLeague(t, "#7A003C", munsell.Purple) // FIXME:
+	testPremierLeague(t, "#7A003C", munsell.Purple)
 }
 
 func TestPremierLeague_WestHamAlt(t *testing.T) {
