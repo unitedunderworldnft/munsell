@@ -3,7 +3,7 @@ package munsell_test
 import (
 	"testing"
 
-	"github.com/unitedunderworldnft/munsell"
+	"github.com/worldies/munsell"
 )
 
 func TestMatchFromHexWhite(t *testing.T) {

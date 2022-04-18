@@ -1,3 +1,3 @@
-module github.com/unitedunderworldnft/munsell
+module github.com/worldies/munsell
 
 go 1.17
