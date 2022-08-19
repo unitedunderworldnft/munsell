@@ -116,161 +116,154 @@ func testPremierLeague(t *testing.T, inputColor string, expectedColor munsell.Co
 		t.Errorf("Expected %s, received %v", expectedColor.String(), color)
 	}
 }
-func TestPremierLeague_Arsenal(t *testing.T) {
-	testPremierLeague(t, "#EF0107", munsell.Red)
+func TestPremierLeague_AFCBournemouth(t *testing.T) {
+	testPremierLeague(t, "#e62333", munsell.Red)
 }
-func TestPremierLeague_ArsenalAlt(t *testing.T) {
-	testPremierLeague(t, "#fbf2b0", munsell.Yellow)
-}
-
-func TestPremierLeague_Aston(t *testing.T) {
-	testPremierLeague(t, "#7A003C", munsell.Purple)
-}
-
-func TestPremierLeague_AstonAlt(t *testing.T) {
+func TestPremierLeague_AFCBournemouthAlt(t *testing.T) {
 	testPremierLeague(t, "#ffffff", munsell.White)
 }
 
+func TestPremierLeague_Arsenal(t *testing.T) {
+	testPremierLeague(t, "#fe0002", munsell.Red)
+}
+func TestPremierLeague_ArsenalAlt(t *testing.T) {
+	testPremierLeague(t, "#003671", munsell.Blue)
+}
+
+func TestPremierLeague_AstonVilla(t *testing.T) {
+	testPremierLeague(t, "#480025", munsell.Purple)
+}
+func TestPremierLeague_AstonVillaAlt(t *testing.T) {
+	testPremierLeague(t, "#94bee5", munsell.LightBlue)
+}
+
 func TestPremierLeague_Brentford(t *testing.T) {
-	testPremierLeague(t, "#f42727", munsell.Red)
+	testPremierLeague(t, "#c61d23", munsell.Red)
 }
-
 func TestPremierLeague_BrentfordAlt(t *testing.T) {
-	testPremierLeague(t, "#ffff00", munsell.Yellow)
+	testPremierLeague(t, "#b4dafd", munsell.LightBlue)
 }
 
-func TestPremierLeague_Brighton(t *testing.T) {
-	testPremierLeague(t, "#0000ff", munsell.Blue)
+func TestPremierLeague_BrightonHoveAlbion(t *testing.T) {
+	testPremierLeague(t, "#0054a6", munsell.Blue)
 }
-
-func TestPremierLeague_BrightonAlt(t *testing.T) {
-	testPremierLeague(t, "#39c3cd", munsell.LightBlue)
+func TestPremierLeague_BrightonHoveAlbionAlt(t *testing.T) {
+	testPremierLeague(t, "#ffffff", munsell.White)
 }
 
 func TestPremierLeague_Burnley(t *testing.T) {
 	testPremierLeague(t, "#53162F", munsell.Purple)
 }
 
-func TestPremierLeague_BurnleyAlt(t *testing.T) {
+func TestPremierLeague_Chelsea(t *testing.T) {
+	testPremierLeague(t, "#0a4595", munsell.Blue)
+}
+func TestPremierLeague_ChelseaAlt(t *testing.T) {
 	testPremierLeague(t, "#ffffff", munsell.White)
 }
 
-func TestPremierLeague_Chelsea(t *testing.T) {
-	testPremierLeague(t, "#0054cd", munsell.Blue) // FIXME:
-}
-
-func TestPremierLeague_ChelseaAlt(t *testing.T) {
-	testPremierLeague(t, "#ffff00", munsell.Yellow)
-}
-
 func TestPremierLeague_CrystalPalace(t *testing.T) {
-	testPremierLeague(t, "#0202fb", munsell.Blue)
+	testPremierLeague(t, "#eb302e", munsell.Red)
 }
-
 func TestPremierLeague_CrystalPalaceAlt(t *testing.T) {
-	testPremierLeague(t, "#ffde00", munsell.Yellow)
+	testPremierLeague(t, "#0055a5", munsell.Blue)
 }
 
 func TestPremierLeague_Everton(t *testing.T) {
-	testPremierLeague(t, "#0000ff", munsell.Blue)
+	testPremierLeague(t, "#00369c", munsell.Blue)
 }
-
 func TestPremierLeague_EvertonAlt(t *testing.T) {
 	testPremierLeague(t, "#231F20", munsell.Black)
 }
 
-func TestPremierLeague_Leeds(t *testing.T) {
-	testPremierLeague(t, "#ffffff", munsell.White)
+func TestPremierLeague_Fulham(t *testing.T) {
+	testPremierLeague(t, "#f5f5f5", munsell.White)
+}
+func TestPremierLeague_FulhamAlt(t *testing.T) {
+	testPremierLeague(t, "#1a1a1a", munsell.Black)
 }
 
-func TestPremierLeague_LeedsAlt(t *testing.T) {
-	testPremierLeague(t, "#081d54", munsell.Blue)
+func TestPremierLeague_LeedsUnited(t *testing.T) {
+	testPremierLeague(t, "#f5f5f5", munsell.White)
+}
+func TestPremierLeague_LeedsUnitedAlt(t *testing.T) {
+	testPremierLeague(t, "#fddf12", munsell.Yellow)
 }
 
-func TestPremierLeague_Leicester(t *testing.T) {
-	testPremierLeague(t, "#0202fb", munsell.Blue)
+func TestPremierLeague_LeicesterCity(t *testing.T) {
+	testPremierLeague(t, "#273e8a", munsell.Blue)
 }
-
-func TestPremierLeague_LeicesterAlt(t *testing.T) {
-	testPremierLeague(t, "#bfe5e6", munsell.LightBlue)
+func TestPremierLeague_LeicesterCityAlt(t *testing.T) {
+	testPremierLeague(t, "#f7a800", munsell.Yellow)
 }
 
 func TestPremierLeague_Liverpool(t *testing.T) {
-	testPremierLeague(t, "#D00027", munsell.Red)
+	testPremierLeague(t, "#e31b23", munsell.Red)
 }
-
 func TestPremierLeague_LiverpoolAlt(t *testing.T) {
-	testPremierLeague(t, "#ece2d9", munsell.White)
+	testPremierLeague(t, "#ffffff", munsell.White)
 }
 
 func TestPremierLeague_ManchesterCity(t *testing.T) {
-	testPremierLeague(t, "#61acdf", munsell.LightBlue)
+	testPremierLeague(t, "#6caee0", munsell.LightBlue)
 }
-
 func TestPremierLeague_ManchesterCityAlt(t *testing.T) {
-	testPremierLeague(t, "#ffffff", munsell.White)
+	testPremierLeague(t, "#333333", munsell.Black)
 }
 
 func TestPremierLeague_ManchesterUnited(t *testing.T) {
-	testPremierLeague(t, "#DA020E", munsell.Red)
+	testPremierLeague(t, "#d81920", munsell.Red)
 }
-
 func TestPremierLeague_ManchesterUnitedAlt(t *testing.T) {
-	testPremierLeague(t, "#b7ddff", munsell.LightBlue)
-}
-
-func TestPremierLeague_Newcastle(t *testing.T) {
-	testPremierLeague(t, "#231F20", munsell.Black)
-}
-
-func TestPremierLeague_NewcastleAlt(t *testing.T) {
-	testPremierLeague(t, "#2e4b60", munsell.Blue)
-}
-
-func TestPremierLeague_Norwich(t *testing.T) {
-	testPremierLeague(t, "#ffff00", munsell.Yellow)
-}
-
-func TestPremierLeague_NorwichAlt(t *testing.T) {
-	testPremierLeague(t, "#081d54", munsell.Blue)
-}
-
-func TestPremierLeague_Southampton(t *testing.T) {
-	testPremierLeague(t, "#ED1A3B", munsell.Red)
-}
-
-func TestPremierLeague_SouthamptonAlt(t *testing.T) {
-	testPremierLeague(t, "#ffff00", munsell.Yellow)
-}
-
-func TestPremierLeague_Tottenham(t *testing.T) {
 	testPremierLeague(t, "#ffffff", munsell.White)
 }
 
-func TestPremierLeague_TottenhamAlt(t *testing.T) {
-	testPremierLeague(t, "#231F20", munsell.Black)
+func TestPremierLeague_NewcastleUnited(t *testing.T) {
+	testPremierLeague(t, "#383838", munsell.Black)
+}
+func TestPremierLeague_NewcastleUnitedAlt(t *testing.T) {
+	testPremierLeague(t, "#00b6f1", munsell.LightBlue)
+}
+
+func TestPremierLeague_NorwichCity(t *testing.T) {
+	testPremierLeague(t, "#ffff00", munsell.Yellow)
+}
+
+func TestPremierLeague_NottinghamForest(t *testing.T) {
+	testPremierLeague(t, "#eb0024", munsell.Red)
+}
+func TestPremierLeague_NottinghamForestAlt(t *testing.T) {
+	testPremierLeague(t, "#ffffff", munsell.White)
+}
+
+func TestPremierLeague_Southampton(t *testing.T) {
+	testPremierLeague(t, "#d71920", munsell.Red)
+}
+func TestPremierLeague_SouthamptonAlt(t *testing.T) {
+	testPremierLeague(t, "#ffffff", munsell.White)
+}
+
+func TestPremierLeague_TottenhamHotspur(t *testing.T) {
+	testPremierLeague(t, "#f5f5f5", munsell.White)
+}
+func TestPremierLeague_TottenhamHotspurAlt(t *testing.T) {
+	testPremierLeague(t, "#131f53", munsell.Blue)
 }
 
 func TestPremierLeague_Watford(t *testing.T) {
 	testPremierLeague(t, "#ffff00", munsell.Yellow)
 }
 
-func TestPremierLeague_WatfordAlt(t *testing.T) {
-	testPremierLeague(t, "#ffffff", munsell.White)
+func TestPremierLeague_WestHamUnited(t *testing.T) {
+	testPremierLeague(t, "#7d2c3b", munsell.Red)
+}
+func TestPremierLeague_WestHamUnitedAlt(t *testing.T) {
+	testPremierLeague(t, "#f8d742", munsell.Yellow)
 }
 
-func TestPremierLeague_WestHam(t *testing.T) {
-	testPremierLeague(t, "#7A003C", munsell.Purple)
+func TestPremierLeague_WolverhamptonWanderers(t *testing.T) {
+	testPremierLeague(t, "#f9a01b", munsell.Orange)
 }
-
-func TestPremierLeague_WestHamAlt(t *testing.T) {
-	testPremierLeague(t, "#b7ddff", munsell.LightBlue)
-}
-
-func TestPremierLeague_Wolverhampton(t *testing.T) {
-	testPremierLeague(t, "#F7AA25", munsell.Yellow)
-}
-
-func TestPremierLeague_WolverhamptonAlt(t *testing.T) {
-	testPremierLeague(t, "#2e4b60", munsell.Blue)
+func TestPremierLeague_WolverhamptonWanderersAlt(t *testing.T) {
+	testPremierLeague(t, "#333333", munsell.Black)
 }
