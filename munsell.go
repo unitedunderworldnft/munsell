@@ -152,33 +152,33 @@ func matchColorFromHSL(hsl HSLComponents) Color {
 
 	if s <= 10 && l >= 90 {
 		return White
-	} else if l <= 15 {
+	} else if l <= 13 {
 		return Black
 	} else if (s <= 10 && l <= 70) || s == 0 {
-		return Unknown // ("Gray")
-	} else if (h >= 0 && h <= 15) || h >= 346 {
+		return Black // ("Gray")
+	} else if (h >= 0 && h <= 16) || h >= 346 {
 		return Red
-	} else if h >= 16 && h <= 35 {
+	} else if h > 16 && h <= 36 {
 		if s < 90 {
 			return Orange // ("Brown")
 		} else {
 			return Orange
 		}
-	} else if h >= 36 && h <= 64 {
+	} else if h > 36 && h <= 64 {
 		if s < 90 {
 			return Yellow // ("Brown")
 		} else {
 			return Yellow
 		}
-	} else if h >= 65 && h <= 165 {
+	} else if h > 64 && h <= 165 {
 		return Green
-	} else if h >= 166 && h <= 199 {
+	} else if h > 165 && h <= 208 {
 		return LightBlue
-	} else if h >= 200 && h <= 260 {
+	} else if h > 208 && h <= 260 {
 		return Blue
-	} else if h >= 261 && h <= 290 {
+	} else if h > 260 && h <= 290 {
 		return Purple
-	} else if h >= 291 && h <= 345 {
+	} else if h > 290 && h <= 345 {
 		return Purple // Pink
 	}
 	return Unknown
